@@ -16,7 +16,7 @@
     "@langchain/core": "^0.3.66",
     "@langchain/google-genai": "^0.2.16",
     "axios": "^1.11.0",
-    "cloudinary": "^2.7.0",
+    "cloudinary": "^1.41.3",
     "dotenv": "^17.2.1",
     "express": "^5.1.0",
     "first_project": "file:..",
