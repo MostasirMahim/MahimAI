@@ -3,13 +3,15 @@ import pdfParse from "pdf-parse";
 import { RecursiveCharacterTextSplitter } from "langchain/text_splitter";
 import { MemoryVectorStore } from "langchain/vectorstores/memory";
 import { GoogleGenerativeAIEmbeddings } from "@langchain/google-genai";
+import axios from "axios";
 export const loadPdf = async (filePath: string): Promise<string> => {
-  const dataBuffer = fs.readFileSync(filePath);
+  const response = await axios.get(filePath, { responseType: "arraybuffer" });
+  const dataBuffer = Buffer.from(response.data);
   const pdfData = await pdfParse(dataBuffer);
   return pdfData.text;
 };
 
-export const embedPdf = async (filePath:string) => {
+export const embedPdf = async (filePath: string) => {
   const text = await loadPdf(filePath);
   const splitter = new RecursiveCharacterTextSplitter({
     chunkSize: 1000,
