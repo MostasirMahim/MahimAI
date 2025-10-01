@@ -2,7 +2,7 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 
 const apiKey = "AIzaSyDbe3aPpfc17rEkUdbxA8BQUKFs8PUbz9o"; //Its Should be in .env file
 const genAI = new GoogleGenerativeAI( apiKey );
-const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });;
+const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });;
 
 
 
